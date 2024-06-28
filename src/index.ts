@@ -10,5 +10,8 @@ function startSimulation(){
         return { x, y };
     }
     const simulationClass = new simulation(simulationDisease, routine);
+    console.log("1")
     simulationClass.startTime();
 }
+
+startSimulation()

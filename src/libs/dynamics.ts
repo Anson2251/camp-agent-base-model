@@ -3,7 +3,7 @@ import { disease } from "./disease";
 import * as utils from "./utils";
 
 function getPossibilityOfInfected(distance: number) {
-    return 1 / distance === 0 ? 1 : 0.9 / distance;
+    return Math.round((1 / distance === 0 ? 1 : 0.9 / distance)*10)/10;
 }
 
 
@@ -57,11 +57,13 @@ export class dynamics {
     }
 
     applyDynamics(){
+        // const infectionMap = this.getInfectionMap();
         const infectionPossibilityMap = this.getInfectionPossibilityMap();
+        console.log(infectionPossibilityMap.map((r) => (r.map((n) => n.toString().slice(0, 3))).join(" ")).join("\n"));
         this.room.agents.forEach(agent => {
             const {x, y} = agent.location;
             const randomNumber = utils.randomNum(0, 100 / infectionPossibilityMap[x][y]);
-            if(randomNumber <= 100){
+            if(randomNumber <= 100 && agent.timeToRestore === 0 && agent.infected === false) {
                 agent.getInfected(this.room.time, this.disease!);
             }
         })

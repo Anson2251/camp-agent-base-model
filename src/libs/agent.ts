@@ -27,6 +27,7 @@ export class agent {
     routine: AgentRoutineType;
     readonly record: AgentRecordType[] = [];
     location: { x: number, y: number } = { x: 0, y: 0 };
+    infected: boolean = false;
     constructor(routine: AgentRoutineType, options: AgentPropertiesType) {
         this.id = uuid();
         this.age = options.age;
@@ -35,17 +36,23 @@ export class agent {
         this.health = options.health;
         this.routine = routine;
         this.activity = 100;
+
+        console.log(`Agent ${this.id} is created`);
+        console.log(`  Age: ${this.age}, Gender: ${this.gender}, Mask: ${this.mask}`);
     }
 
     updateTime(time: number, roomSize: number) {
         if(this.timeToRestore > 0) {
             this.timeToRestore -= 1;
             if(this.timeToRestore === 0) {
+                console.log(`Agent ${this.id} is recovered`);
+            }
+            if(this.timeToRestore === 0) {
                 this.activity = 100;
             }
         }
         if(this.activity > 0) {
-            this.activity -= 1;
+            this.activity += 1;
         }
 
         this.location = this.routine(time, roomSize);
@@ -55,8 +62,9 @@ export class agent {
         this.timeToRestore = disease.timeToRestore;
         this.activity -= disease.seriousness / (100 / this.health);
 
-        console.log(`Agent ${this.id} is infected by ${disease.name}`);
+        console.log(`Agent ${this.id} is infected by '${disease.name}'`);
 
+        this.infected = true;
         this.record.push({
             msg: `Infected by ${disease.name}`,
             time: time,

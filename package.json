@@ -4,7 +4,8 @@
   "description": "a model for the agent based model",
   "main": "index.js",
   "scripts": {
-    "test": "vite dev"
+    "test": "vite dev", 
+    "test-run": "tsc -p tsconfig.json; node ./build/src/index.js"
   },
   "author": "",
   "license": "MIT",
