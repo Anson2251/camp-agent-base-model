@@ -3,21 +3,23 @@ import { disease } from "./disease";
 import * as utils from "./utils";
 
 function getPossibilityOfInfected(distance: number) {
-    return Math.round((1 / distance === 0 ? 1 : 0.9 / distance)*10)/10;
+    return Math.round((distance <= 1 ? 1 : (1 / (distance**2)))*10)/10;
 }
 
 
 export class dynamics {
     room: room;
     disease: disease | undefined;
+    possibilityMap: number[][];
     constructor(room: room) {
         this.room = room;
+        this.possibilityMap = new Array(this.room.size).fill(0).map(() => new Array(this.room.size).fill(0));
     }
 
     getInfectionMap(){ // 1: infected, 0: not infected
         const map = new Array(this.room.size).fill(0).map(() => new Array(this.room.size).fill(0));
         this.room.agents.forEach(agent => {
-            if(agent.timeToRestore > 0) {
+            if(agent.infected && !agent.mask){
                 const {x, y} = agent.location;
                 this.disease = agent.record[agent.record.length - 1].disease;
                 map[x][y] = 1;
@@ -26,8 +28,8 @@ export class dynamics {
         return map;
     }
 
-    getInfectionPossibilityMap(){
-        const map = new Array(this.room.size).fill(0).map(() => new Array(this.room.size).fill(0));
+    updateInfectionPossibilityMap(): void{
+        this.possibilityMap = new Array(this.room.size).fill(0).map(() => new Array(this.room.size).fill(0));
         const infectionMap = this.getInfectionMap();
 
         for(let ii = 0; ii < this.room.size; ii++){
@@ -37,33 +39,23 @@ export class dynamics {
                         for(let j = 0; j < this.room.size; j++){
                             const distance = utils.distance(ii, ij, i, j);
                             const possibility = getPossibilityOfInfected(distance);
-                            map[i][j] = map[i][j] + possibility < 1 ? map[i][j] + possibility : 1;
+                            this.possibilityMap[i][j] = this.possibilityMap[i][j] + possibility < 1 ? this.possibilityMap[i][j] + possibility : 1;
                         }
                     }
                 }
             }
         }
-
-        return map;
-    }
-
-    applyInfectionPossibilityCalc(x: number, y: number){
-        for(let i = 0; i < this.room.size; i++){
-            for(let j = 0; j < this.room.size; j++){
-                const distance = utils.distance(x, y, i, j);
-                const possibility = getPossibilityOfInfected(distance);
-            }
-        }
     }
 
     applyDynamics(){
-        // const infectionMap = this.getInfectionMap();
-        const infectionPossibilityMap = this.getInfectionPossibilityMap();
-        console.log(infectionPossibilityMap.map((r) => (r.map((n) => n.toString().slice(0, 3))).join(" ")).join("\n"));
-        this.room.agents.forEach(agent => {
+        this.updateInfectionPossibilityMap();
+
+        this.room.agents.filter(agent => !agent.infected && agent.previouslyInfected === false && !agent.mask).forEach(agent => {
             const {x, y} = agent.location;
-            const randomNumber = utils.randomNum(0, 100 / infectionPossibilityMap[x][y]);
-            if(randomNumber <= 100 && agent.timeToRestore === 0 && agent.infected === false) {
+
+            if(this.possibilityMap[x][y] === 0) return;
+            const randNum = Math.random();
+            if(randNum < this.possibilityMap[x][y]){
                 agent.getInfected(this.room.time, this.disease!);
             }
         })
