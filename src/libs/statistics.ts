@@ -15,16 +15,21 @@ export class statistics {
     simulationClass: simulation
     constructor(simulationClass: simulation) {
         this.simulationClass = simulationClass;
-        simulationClass.addHandler("tick", (simulationStep: simulation) => {
-            const infectedAgentNum = simulationStep.agents.filter((agent) => agent.infected).length;
-            const susceptibleAgentNum = simulationStep.agents.filter((agent) => !agent.infected && !agent.previouslyInfected).length;
-            const recoveredAgentNum = simulationStep.agents.filter((agent) => agent.previouslyInfected && agent.timeToRestore === 0).length;
-            this.addRecord(simulationStep.time, infectedAgentNum, susceptibleAgentNum, recoveredAgentNum);
+        simulationClass.addHandler("tick", () => {
+            this.recordCurrentTick();
         });
         simulationClass.addHandler("finish", () => {
             const report = this.generateReport();
             saveReport(report);
         });
+        this.recordCurrentTick();
+    }
+
+    recordCurrentTick() {
+        const infectedAgentNum = this.simulationClass.agents.filter((agent) => agent.infected).length;
+        const susceptibleAgentNum = this.simulationClass.agents.filter((agent) => !agent.infected && !agent.previouslyInfected).length;
+        const recoveredAgentNum = this.simulationClass.agents.filter((agent) => agent.previouslyInfected && agent.timeToRestore === 0).length;
+        this.addRecord(this.simulationClass.time, infectedAgentNum, susceptibleAgentNum, recoveredAgentNum);
     }
 
     addRecord(time: number, infectedAgentNum: number, susceptibleAgentNum: number, recoveredAgentNum: number) {
