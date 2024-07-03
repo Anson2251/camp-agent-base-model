@@ -1,8 +1,7 @@
-# # Install
+# Libs
 library(jsonlite)
 library(ggplot2)
 library(reshape2)
-library(hrbrthemes)
 
 args <- commandArgs(trailingOnly = TRUE)
 print(args)
@@ -11,7 +10,6 @@ json_file_path <- args[1]
 diagram_file_path <- args[2]
 
 json_data <- fromJSON(readLines(json_file_path))
-
 # Extract and convert the 'data' part to a data frame
 data_list <- json_data$data
 data_df <- do.call(rbind, lapply(data_list, as.data.frame))
@@ -38,6 +36,6 @@ plot <- ggplot(data_df) +
         legend.title = element_text(size = 14),
         legend.text = element_text(size = 12)
     ) + 
-    scale_color_manual(values = c("Susceptible" = "blue", "Recovered" = "green", "Infected" = "red"))
+    scale_color_manual(values = c("Susceptible" = "blue", "Recovered" = "darkgreen", "Infected" = "red"))
 
 ggsave(diagram_file_path, plot = plot, width = 8, height = 6)
