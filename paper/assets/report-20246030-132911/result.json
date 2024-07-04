@@ -1,0 +1,320 @@
+{
+    "data": {
+        "0": {
+            "infectedAgentNum": 1,
+            "susceptibleAgentNum": 39,
+            "recoveredAgentNum": 0
+        },
+        "1": {
+            "infectedAgentNum": 1,
+            "susceptibleAgentNum": 39,
+            "recoveredAgentNum": 0
+        },
+        "2": {
+            "infectedAgentNum": 3,
+            "susceptibleAgentNum": 37,
+            "recoveredAgentNum": 0
+        },
+        "3": {
+            "infectedAgentNum": 3,
+            "susceptibleAgentNum": 37,
+            "recoveredAgentNum": 0
+        },
+        "4": {
+            "infectedAgentNum": 5,
+            "susceptibleAgentNum": 35,
+            "recoveredAgentNum": 0
+        },
+        "5": {
+            "infectedAgentNum": 7,
+            "susceptibleAgentNum": 33,
+            "recoveredAgentNum": 0
+        },
+        "6": {
+            "infectedAgentNum": 8,
+            "susceptibleAgentNum": 32,
+            "recoveredAgentNum": 0
+        },
+        "7": {
+            "infectedAgentNum": 10,
+            "susceptibleAgentNum": 30,
+            "recoveredAgentNum": 0
+        },
+        "8": {
+            "infectedAgentNum": 13,
+            "susceptibleAgentNum": 27,
+            "recoveredAgentNum": 0
+        },
+        "9": {
+            "infectedAgentNum": 17,
+            "susceptibleAgentNum": 23,
+            "recoveredAgentNum": 0
+        },
+        "10": {
+            "infectedAgentNum": 18,
+            "susceptibleAgentNum": 21,
+            "recoveredAgentNum": 1
+        },
+        "11": {
+            "infectedAgentNum": 22,
+            "susceptibleAgentNum": 17,
+            "recoveredAgentNum": 1
+        },
+        "12": {
+            "infectedAgentNum": 21,
+            "susceptibleAgentNum": 16,
+            "recoveredAgentNum": 3
+        },
+        "13": {
+            "infectedAgentNum": 22,
+            "susceptibleAgentNum": 15,
+            "recoveredAgentNum": 3
+        },
+        "14": {
+            "infectedAgentNum": 23,
+            "susceptibleAgentNum": 12,
+            "recoveredAgentNum": 5
+        },
+        "15": {
+            "infectedAgentNum": 22,
+            "susceptibleAgentNum": 11,
+            "recoveredAgentNum": 7
+        },
+        "16": {
+            "infectedAgentNum": 23,
+            "susceptibleAgentNum": 9,
+            "recoveredAgentNum": 8
+        },
+        "17": {
+            "infectedAgentNum": 24,
+            "susceptibleAgentNum": 6,
+            "recoveredAgentNum": 10
+        },
+        "18": {
+            "infectedAgentNum": 22,
+            "susceptibleAgentNum": 5,
+            "recoveredAgentNum": 13
+        },
+        "19": {
+            "infectedAgentNum": 19,
+            "susceptibleAgentNum": 4,
+            "recoveredAgentNum": 17
+        },
+        "20": {
+            "infectedAgentNum": 17,
+            "susceptibleAgentNum": 4,
+            "recoveredAgentNum": 19
+        },
+        "21": {
+            "infectedAgentNum": 13,
+            "susceptibleAgentNum": 4,
+            "recoveredAgentNum": 23
+        },
+        "22": {
+            "infectedAgentNum": 14,
+            "susceptibleAgentNum": 2,
+            "recoveredAgentNum": 24
+        },
+        "23": {
+            "infectedAgentNum": 13,
+            "susceptibleAgentNum": 2,
+            "recoveredAgentNum": 25
+        },
+        "24": {
+            "infectedAgentNum": 11,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 28
+        },
+        "25": {
+            "infectedAgentNum": 10,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 29
+        },
+        "26": {
+            "infectedAgentNum": 8,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 31
+        },
+        "27": {
+            "infectedAgentNum": 5,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 34
+        },
+        "28": {
+            "infectedAgentNum": 4,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 35
+        },
+        "29": {
+            "infectedAgentNum": 3,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 36
+        },
+        "30": {
+            "infectedAgentNum": 3,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 36
+        },
+        "31": {
+            "infectedAgentNum": 3,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 36
+        },
+        "32": {
+            "infectedAgentNum": 1,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 38
+        },
+        "33": {
+            "infectedAgentNum": 1,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 38
+        },
+        "34": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "35": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "36": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "37": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "38": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "39": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "40": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "41": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "42": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "43": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "44": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "45": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "46": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "47": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "48": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "49": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "50": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "51": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "52": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "53": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "54": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "55": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "56": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "57": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "58": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "59": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        },
+        "60": {
+            "infectedAgentNum": 0,
+            "susceptibleAgentNum": 1,
+            "recoveredAgentNum": 39
+        }
+    },
+    "meta": {
+        "timeSpan": 60,
+        "agentNumber": 40,
+        "roomSize": 40,
+        "disease": {
+            "instanceUUID": "e1a57f64-9ee4-497b-82f2-5c7f3d583549",
+            "name": "Cold",
+            "severity": 100,
+            "timeToRestore": 10
+        }
+    }
+}

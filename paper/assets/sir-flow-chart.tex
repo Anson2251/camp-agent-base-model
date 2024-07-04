@@ -1,0 +1,9 @@
+\begin{tikzpicture}[node distance=10pt]
+    \tikzset{style={font=\sffamily\footnotesize}}
+    \node[draw]                         (susceptible)   {Susceptible};
+    \node[draw, below=of susceptible]    (infectious)    {Infectious};
+    \node[draw, below=of infectious]     (recovered)     {Recovered};
+    
+    \draw[->] (susceptible)  -- node[right] {$\beta$} (infectious);
+    \draw[->] (infectious) -- node[right] {$\gamma$} (recovered);
+\end{tikzpicture}
