@@ -19,9 +19,9 @@ meta_info <- json_data$meta
 
 # Plot the data
 plot <- ggplot(data_df) +
-    geom_line(aes(x = 1:nrow(data_df), y = susceptibleAgentNum, color = "Susceptible"), linewidth = 1.2) +
-    geom_line(aes(x = 1:nrow(data_df), y = recoveredAgentNum, color = "Recovered"), linewidth = 1.2) +
-    geom_line(aes(x = 1:nrow(data_df), y = infectedAgentNum, color = "Infected"), linewidth = 1.2) +
+    geom_line(aes(x = 1:nrow(data_df), y = susceptibleAgentNum, color = "Susceptible"), linewidth = 0.7) +
+    geom_line(aes(x = 1:nrow(data_df), y = recoveredAgentNum, color = "Recovered"), linewidth = 0.7) +
+    geom_line(aes(x = 1:nrow(data_df), y = infectedAgentNum, color = "Infected"), linewidth = 0.7) +
     labs(title = "Agent Status Over Time",
         x = "Time",
         y = "Number of Agents",
