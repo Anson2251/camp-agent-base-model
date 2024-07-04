@@ -6,7 +6,6 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{subfigure}
-\usepackage[utf8]{inputenc}
 \usepackage{appendix}
 \usepackage{parskip}
 
@@ -18,7 +17,7 @@
 \usetikzlibrary{positioning, shapes.geometric}
 
 % Title and Author
-\title{A TypeScript based agent-based disease model}
+\title{A TypeScript Based Agent-based Disease Model}
 \author{Heyan Zhu (Anson)\\
 \footnotesize Mathmatics \& Computer Science Class\\
 \footnotesize \texttt{heyan.zhu@ulink.cn}}
@@ -31,7 +30,7 @@
 
 % Abstract
 \begin{abstract}
-This papers brings an agent-based model implemented by TypeScript, simulating the spread of diseases.
+This paper presents an agent-based model implemented in TypeScript, which simulates the spread of diseases. It compares this model with the SIR model.
 \end{abstract}
 
 % \newpage
@@ -39,11 +38,10 @@ This papers brings an agent-based model implemented by TypeScript, simulating th
 \newcommand{\md}{\mathrm{d}}
 
 \section{Introduction}
-An agent-based model is a computer simulation of the interaction of agents (people) that is used to predict and demonstrate the spread of diseases. \textcite{columbiaGeneral}
+An agent-based model is a computer simulation of the interaction of agents (people) that is used to predict and demonstrate the spread of diseases \cite{columbiaGeneral}. This paper presents a TypeScript-based agent-based model that can partially simulate the spread of disease.
 
 \subsection{Math theory of spread of disease}
-In the field of mathematics, there also exists a model known as the SIR model, which is a set of differential equations that describes the number of people who are susceptible ($S$, not infected), infected ($I$), and recovered ($R$, have recovered from the illness and are no longer susceptible to the same disease).
-The equations of SIR model are as follows.
+In the field of mathematics, there also exists a model known as the SIR model, which is a set of differential equations that describe the number of people who are susceptible ($S$, not infected), infected ($I$), and recovered ($R$, have recovered from the illness and are no longer susceptible to the same disease). The equations of the SIR model are as follows:
 
 \begin{align}
     \frac{\md S}{\md t}&=-\beta S I\\
@@ -55,14 +53,14 @@ The equations of SIR model are as follows.
 	\begin{minipage}[h]{0.3\linewidth}
 		\centering
 		\input{./assets/sir-flow-chart.tex}
-        \caption{\scriptsize \sffamily The flow chart\textcite{mediumGeneral} of SIR model. }
+        \caption{\scriptsize \sffamily The flow chart\cite{mediumGeneral} of SIR model. }
 	\end{minipage}
 	\begin{minipage}[h]{0.7\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{./assets/sir-graph.png}
-         \caption{\scriptsize \sffamily The diagram\textcite{sirGraph} of SIR model. \\ \quad($\beta=1$ and $\gamma=0.1$)}
+        \label{fig:sir-chart}
+        \caption{\scriptsize \sffamily The diagram\cite{sirGraph} of SIR model. \\ \quad($\beta=1$ and $\gamma=0.1$)}
 	\end{minipage}
-	\label{fig:hor_2figs_1cap}
 \end{figure}
 
 % Methodology
@@ -75,12 +73,11 @@ In general, agents are collections of properties, such as name, age, gender, hea
 The behaviours of the agents in this model represent their daily routines and the locations of the agents at a specific time.
 
 \subsection{Environment}
-The environment can be defined as the space in which the agents reside. The dynamics of the agents can be understood as the movement of the agents within this space, which is influenced by their routines.
+The term "environment" is defined as the space in which the agents reside. The dynamics of the agents can be understood as the movement of the agents within this space, which is influenced by their routines.
 
 \subsection{Dynamics}
 \subsubsection{Infection Possibility}
-In order to simulate the spread of the disease, we need to consider how the healthy agents interact with the infected agents and get infected.
-If the infected agents move close to the healthy agents, the risks of infection will be increased. A simple formulae which can roughly represent this is as follows.
+In order to simulate the spread of the disease, it is necessary to consider how healthy agents interact with infected agents and become infected. If infected agents move in close proximity to healthy agents, the risk of infection will be increased. A simple formula that can be used to roughly represent this is as follows.
 
 \[
 \mathbb{P}(\text{Infection})=\begin{cases}
@@ -91,11 +88,11 @@ If the infected agents move close to the healthy agents, the risks of infection 
 
 The graph of the above formula is shown in the figure below.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{./assets/infection-possibility-graph.png}
+	\includegraphics[width=0.55\linewidth]{./assets/infection-possibility-graph.png}
+    \label{fig:infection-possibility-graph}
 	\caption{The graph of possibility of infection.}
-	\label{fig:infection-possibility-graph}
 \end{figure}
 
 Where the $x$ is the distance between the agents, calculated by the formula.
@@ -108,20 +105,18 @@ Every agents will randomly get infected with a certain probability.
 
 \subsubsection{Restoration}
 
-As soon as the agents are infected, a timer will start to count down. When the timer reaches 0, the agents will be restored. The restored agents will not get infected by the same disease.
+Upon infection of the agents, a timer will commence a countdown. Upon reaching zero, the timer will initiate the restoration of the agents. It can be assumed that the restored agents will not become infected by the same disease.
 
 \subsection{Implemention}
 
-In general, the model is implemented in TypeScript for the type safety which can structure the model well and make the code easier to understand, however, the graphing of the model is implemented in R, becuase of the powerful plotting package \texttt{ggplot2}.
+This model is implemented in TypeScript for the purpose of type safety, which enables the model to be well structured in a logical and comprehensible manner. However, the graphing of the model is implemented in R due to the availability of the powerful plotting package  \texttt{ggplot2}.
 
-The graph of the model \ref{fig:model-structure} which shows the design and the way that the modules cooperates with each other is shown in the appendix.
-
-The flow chart of the model \ref{fig:model-flow-chart} is also placed in the appendix.
+The model's graphical representation \ref{fig:model-structure}, which illustrates the design and the manner in which the modules interact with one another, can be found in the appendix.
+The flow chart of the model \ref{fig:model-flow-chart} is also included in the appendix.
 
 % Results
 \section{Results}
-The log of the model can be found in the appendix.
-The result of the model is shown in the figure below. The parameters set in this model: 
+The report generated by the model is appended in the Appendix. The graphic part of the report and the parameters are shown below.
 
 \begin{itemize}
     \item Simulation Time: 60
@@ -140,20 +135,19 @@ The result of the model is shown in the figure below. The parameters set in this
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.9\linewidth]{./assets/report-20246030-132911/diagram.png}
+    \label{fig:agent-based-model-chart} 
 	\caption{\scriptsize \sffamily The diagram of the created agent-based model}
 \end{figure}
 
-It is obvious that this model can partially simulate the spread of the disease with given parameters with the agents and diseases, because of the similiarty between Figure 2 and Figure 4 with the outbreaks and extinctions.
+It is evident that this model is capable of partially simulating the spread of the disease with given parameters in relation to the agents and diseases, due to the similarity between the previous figures \ref{fig:sir-chart} and this figure \ref{fig:agent-based-model-chart}, which depict outbreaks and extinctions.
 
 % Discussion
 \section{Discussion}
-This model is a good model to simulate the simple spread of the disease, written in TypeScript, for the sake of simplicity, but lack of ability to simulate the multiple diseases with complex dynamics.
-Some feature that can migrate and control the parameters of $\beta$ and $\gamma$ are missing, should be added in the future.
-Becuase of the familiarity of the TypeScript, author choose to write in this language, which is not common for the data analysis. It can be better if the model can be implemented with Python or R.
+This model is an effective tool for simulating the simple spread of the disease. It has been developed in TypeScript, a language chosen for its maintainability, but it lacks the ability to simulate the multiple diseases with complex dynamics. Some features that could facilitate the migration and control of parameters such as $\beta$ and $\gamma$ are missing and should be added in the future. The author has chosen to write in TypeScript, a language that is not commonly used for data analysis, due to its familiarity. It would be preferable if the model could be implemented in Python or R, which is more commonly used for data analysis.
 
 % Conclusion
 \section{Conclusion}
-The above model can successfully simulate the spread of the disease, with the outbreak and extinctions.
+The model described above is capable of accurately simulating the spread of the disease, including the occurrence of outbreaks and extinctions.
 
 % References
 \section{References}
@@ -163,10 +157,9 @@ The above model can successfully simulate the spread of the disease, with the ou
 
 \section{Appendix}
 \begin{appendices}
-    \subsection{The log of the agent-based model}
-    The log for the run from the model can be found in this URL. \url{https://pastecode.io/s/jb6npovz}. The routine of the agent has been set to randomly move.
-
-    \newpage
+    \subsection{The test run report for the model}
+    \leftline{The content of the report can be found in the following URL, (JSON format)}
+    \url{https://pastecode.io/s/twvh8go9}
 
     \subsection{The structrue of the agent-based model}
     \begin{figure}[ht]

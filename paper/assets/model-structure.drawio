@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e" scale="8" border="0">
     <diagram id="FyCsB_sldOff4jIcLmJ8" name="Page-1">
-        <mxGraphModel dx="428" dy="214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="358" dy="360" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -164,24 +164,13 @@
                 </mxCell>
                 <mxCell id="41" value="" style="endArrow=classic;html=1;fontSize=8;exitX=0.893;exitY=0.99;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.896;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="454.6700000000001" y="349.70000000000005" as="sourcePoint"/>
-                        <mxPoint x="455.24" y="434.61" as="targetPoint"/>
+                        <mxPoint x="463.6700000000001" y="349.70000000000005" as="sourcePoint"/>
+                        <mxPoint x="464.24" y="434.61" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="42" value="Record agent number" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="41" vertex="1" connectable="0">
                     <mxGeometry x="0.5214" y="1" relative="1" as="geometry">
                         <mxPoint x="-2" y="7" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="43" value="" style="endArrow=classic;html=1;exitX=0.651;exitY=0.993;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.589;entryY=0.033;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="495.68999999999994" y="404.7900000000001" as="sourcePoint"/>
-                        <mxPoint x="494.90999999999997" y="495.99" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="44" value="Sync time" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=8;" parent="43" vertex="1" connectable="0">
-                    <mxGeometry x="0.3079" relative="1" as="geometry">
-                        <mxPoint y="16" as="offset"/>
                     </mxGeometry>
                 </mxCell>
             </root>
