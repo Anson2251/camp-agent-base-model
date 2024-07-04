@@ -82,7 +82,7 @@ export async function drawDiagram(dataPath: string, diagramPath: string){
 
 export async function saveReport(report: any){
     const date = new Date();
-    const reportName =`report-${date.getFullYear().toString().padEnd(2, "0")}${date.getMonth().toString().padEnd(2, "0")}${date.getDate().toString().padEnd(2, "0")}-${date.getHours().toString().padEnd(2, "0")}${date.getMinutes().toString().padEnd(2, "0")}${date.getSeconds().toString().padEnd(2, "0")}`;
+    const reportName =`report-${date.getFullYear().toString().padStart(4, "0")}${date.getMonth().toString().padStart(2, "0")}${date.getDate().toString().padStart(2, "0")}-${date.getHours().toString().padStart(2, "0")}${date.getMinutes().toString().padStart(2, "0")}${date.getSeconds().toString().padStart(2, "0")}`;
     const resultFilePath = `./reports/${reportName}/result.json`;
     const diagramPath = `./reports/${reportName}/diagram.png`;
 
