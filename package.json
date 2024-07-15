@@ -1,21 +1,20 @@
 {
   "name": "camp-agent-base-model",
   "version": "0.0.1",
-  "description": "a model for the agent based model",
-  "main": "index.js",
+  "description": "A model for the agent based model",
   "scripts": {
-    "test": "vite dev",
+    "test": "npm run test-run",
     "test-run": "tsc -p tsconfig.json; node ./build/index.js",
     "test-run-log": "mkdir -p logs; npm run test-run > logs/$(date +'%Y%m%d-%H%M%S').txt"
   },
-  "author": "",
+  "author": "Heyan Zhu (Anson)",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@types/node": "^20.14.9",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.9",
     "@types/uuid": "^10.0.0"
   }
 }
